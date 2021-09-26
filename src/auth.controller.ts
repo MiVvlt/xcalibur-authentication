@@ -23,4 +23,9 @@ export class AuthController {
 	async login( @Payload() credentials: any ): Promise<any> {
 		return this.authService.login( credentials );
 	}
+
+	@MessagePattern( 'status' )
+	async status( ): Promise<boolean> {
+		return true;
+	}
 }
